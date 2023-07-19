@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: rgb(11, 6,29);
+    color: whitesmoke;
+    font-family: sans-serif;
+}
+nav {
+    height: 70px;
+}
+ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    height: 70px;
+}
+ul a {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(245, 245,245);
+    font-size: 30px;
+    border: 2px solid gold;
+    padding: O.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+ul a:hover {
+    background-color: rgb(148, 202,94);
+}

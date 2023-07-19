@@ -1,0 +1,26 @@
+<%- include("./partials/header.ejs") %>
+    <h1>Ajouter critiques</h1>
+
+    <form action="/ajouter" method="post">
+        <div>
+            <label for="nom">Votre nom</label>
+            <input type="text" name="nom" id="nom" required>
+        </div>
+        <div>
+            <label for="plat">Plat</label>
+            <select name="plat" id="plat">
+                <% if (locals.plats) { %>
+                    <% plats.forEach(plat => { %>
+                   <option value="<%= plat %>"><%= plat %></option>
+                    <% }) %>
+                <% } %>
+            </select>
+            
+        </div>
+        <div>
+            <label for="critique">Critique</label>
+            <textarea name="critique" id="critique"></textarea>
+        </div>
+        <button type="submit">Envoyer votre critique</button>
+    </form>
+<%- include("./partials/footer.ejs") %>

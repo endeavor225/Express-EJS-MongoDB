@@ -1,0 +1,32 @@
+<%- include("./partials/header.ejs") %>
+    <h1>Critiques castronomiques</h1>
+
+    <form action="/" method="post">
+        <select name="plat" id="plat">
+            <option value="">Aucun</option>
+            <% if (locals.plats) { %>
+             <% plats.forEach(plat => { %>
+              <option value="<%= plat %>"> <%= plat %></option>
+             <% }) %>
+            <% } %>
+        </select>
+        <button type="submit">Filtre les critiques </button>
+    </form>
+
+    <ul class="critiques">
+        <% if (locals.critiques) { %>
+         <% critiques.forEach(item => { %>
+          <li>
+            <div class="info">
+                <div>
+                    <p><%= item.nom %></p>
+                    <p><%= item.plat %></p>
+                </div>
+                <p><%= String(item.date).split("GMT")[0].trim() %></p>
+            </div>
+            <p class="avis"><%= item.critique %></p>
+          </li>
+         <% }) %>
+        <% } %>
+    </ul>
+<%- include("./partials/footer.ejs") %>
